@@ -3,7 +3,7 @@ const welcomeScreen = document.getElementById(`welcome-screen`);
 const gameScreen = document.getElementById(`game-screen`);
 const startGameButton = document.getElementById(`start-game-button`);
 const userName = document.getElementById(`username`);
-const userSelection = document.getElementById(`https://www.youtube.com/watch?v=fONRor0ycKk`);
+const userSelection = document.getElementById(`userSelection`);
 const goButton = document.getElementById(`go-button`);
 const scoreParagraph = document.getElementById(`score`);
 const gameHistoryParagraph = document.getElementById(`game-history`);
