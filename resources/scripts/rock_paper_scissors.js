@@ -16,7 +16,7 @@ class RockPaperScissors {
     const acceptedValues = [ `rock`, `paper`, `scissors` ];
     var max = 3;
     var randomNumber = Math.floor(Math.random() * max);
-    return acceptedValues.indexOf(randomNumber);
+    return acceptedValues[randomNumber];
   }
   /**
    * returns one of the following values: `win`, `lose`, `tie`
@@ -36,6 +36,9 @@ class RockPaperScissors {
   determineWinner(userSelection, cpuSelection){
     if((userSelection === "rock" && cpuSelection === "scissors") || (userSelection === "paper" && cpuSelection === "rock") || (userSelection === "scissors" && cpuSelection === "paper")){
       return `win`;
+    }
+    else if((userSelection === cpuSelection)){
+      return `tie`;
     }
     else return `lose`;
   }
