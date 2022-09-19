@@ -34,10 +34,16 @@ class RockPaperScissors {
    * @param {string} cpuSelection computer selection. Can only be one of the following values [`rock`, `paper`, `scissors`]
    */
   determineWinner(userSelection, cpuSelection){
-    if((userSelection === "rock" && cpuSelection === "scissors") || (userSelection === "paper" && cpuSelection === "rock") || (userSelection === "scissors" && cpuSelection === "paper")){
+    if(userSelection === 'rock' && cpuSelection === 'scissors'){
       return `win`;
     }
-    else if((userSelection === cpuSelection)){
+    else if(userSelection === 'paper' && cpuSelection === 'rock'){
+      return `win`;
+    }
+    else if(userSelection === 'scissors' && cpuSelection === 'paper'){
+      return `win`;
+    }
+    else if(userSelection === cpuSelection){
       return `tie`;
     }
     else return `lose`;
@@ -50,13 +56,16 @@ class RockPaperScissors {
   play(userSelection){
     var cpuResponse = this.generateCPUResponse();
     var winner = this.determineWinner(userSelection, cpuResponse);
-    if(winner = `win`){
+    if(winner == `win`){
       this.score.user++;
-      this.gameHistoryLog.push(`${this.username} selected ${userSelection}, CPU selected ${cpuResponse}; ${this.username} wins!`);
+      this.gameHistoryLog.push(`${this.username.value} selected ${userSelection}, CPU selected ${cpuResponse}; ${this.username.value} wins!`);
+    }
+    else if(winner == `tie`){
+      this.gameHistoryLog.push(`${this.username.value} selected ${userSelection}, CPU selected ${cpuResponse}; Tie!`);
     }
     else {
       this.score.cpu++;
-      this.gameHistoryLog.push(`${this.username} selected ${userSelection}, CPU selected ${cpuResponse}; CPU wins!`);
+      this.gameHistoryLog.push(`${this.username.value} selected ${userSelection}, CPU selected ${cpuResponse}; CPU wins!`);
     }
   }
 
